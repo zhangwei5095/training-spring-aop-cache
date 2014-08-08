@@ -3,6 +3,7 @@ package com.shangpin;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.google.code.ssm.api.InvalidateSingleCache;
@@ -29,8 +30,9 @@ public class UserService {
 	 * @param id
 	 * @return
 	 */
-	@ReadThroughSingleCache(namespace = NAMESPACE, expiration = 3600)
-	public User getUser(@ParameterValueKeyProvider String id) {
+//	@ReadThroughSingleCache(namespace = NAMESPACE, expiration = 3600)
+    @Cacheable(value="defaultCache")
+	public User getUser(String id) {
 		System.out.println("==================" + id);
 		return users.get(id);
 	}

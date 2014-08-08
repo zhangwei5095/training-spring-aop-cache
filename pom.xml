@@ -162,12 +162,18 @@
 			<version>1.8.3</version>
 			<scope>compile</scope>
 		</dependency>
-
+		
+		<dependency>
+			<groupId>com.google.code.simple-spring-memcached</groupId>
+			<artifactId>spring-cache</artifactId>
+			<version>3.5.0</version>
+		</dependency>
 		<dependency>
 			<groupId>com.google.code.simple-spring-memcached</groupId>
 			<artifactId>spymemcached-provider</artifactId>
-			<version>3.1.0</version>
+			<version>3.5.0</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib</artifactId>

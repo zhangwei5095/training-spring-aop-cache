@@ -1,5 +1,8 @@
 package com.shangpin.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -26,6 +29,11 @@ public class TrainingController {
         user.setId("123456");
         user.setName("Hello");
         return user;
+    }
+    
+    public Map<String, String> trainingMap() {
+    	Map<String, String> params = new HashMap<String, String>();
+    	return params;
     }
 
 }
