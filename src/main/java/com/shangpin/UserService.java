@@ -31,7 +31,7 @@ public class UserService {
 	 * @return
 	 */
 //	@ReadThroughSingleCache(namespace = NAMESPACE, expiration = 3600)
-    @Cacheable(value="defaultCache")
+    @Cacheable(value="defaultCache", key="#root.methodName + #id")
 	public User getUser(String id) {
 		System.out.println("==================" + id);
 		return users.get(id);

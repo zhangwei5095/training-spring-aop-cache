@@ -12,13 +12,15 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.shangpin.entity.User;
 
+import javax.annotation.Resource;
+
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:applicationContext.xml" })
 public class TrainingMemcached {
 	private Logger log = LoggerFactory.getLogger(this.getClass());
 	
-	@Autowired
+	@Resource(name = "memcachedClient")
 	private MemcachedClient memcachedClient;
 	@Autowired
 	private UserService userService;
@@ -32,12 +34,12 @@ public class TrainingMemcached {
 	@Test
 	public void testMemcached () {
 		User user = new User();
-		user.setId("123456");
+		user.setId("1234567");
 		user.setName("Hello");
 		log.info("测试添加数据");
 		userService.saveUser(user);
 		log.info("第一次测试获取数据");
-		userService.getUser("123456");
+		userService.getUser("1234567");
 		
 		log.info("第二次测试获取数据");
 		userService.getUser("123456");
